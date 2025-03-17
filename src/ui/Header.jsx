@@ -15,7 +15,7 @@ function Header() {
           سامانه نوبت دهی پزشکیار
         </h3>
         <NavBtn to="/appointment">نوبت دهی مطب</NavBtn>
-        <NavBtn to="/expert">تخصص ها</NavBtn>
+        <NavBtn to="/speciality">تخصص ها</NavBtn>
         <NavBtn to="/doctor">جستوجوی پزشک</NavBtn>
         <NavBtn to="/contact">ارتباط با ما</NavBtn>
       </div>

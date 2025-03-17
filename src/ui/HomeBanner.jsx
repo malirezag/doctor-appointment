@@ -11,7 +11,7 @@ function HomeBanner() {
        mx-auto gap-25 px-10 pt-15"
       >
         <div className="flex flex-col gap-10 items-start">
-          <h1 className="text-5xl leading-18">
+          <h1 className="text-5xl leading-18 text-blue-950 font-medium">
             سامانه نوبت دهی پزشکان و مشاوره آنلاین
           </h1>
           <button
@@ -31,7 +31,7 @@ function HomeBanner() {
       {/* search pannel */}
 
       <div
-        className="bg-blue-500 h-30 max-w-280 mx-auto mt-15 
+        className="bg-linear-to-bl from-blue-600 to-indigo-500 h-30 max-w-280 mx-auto mt-15 
        rounded-2xl flex items flex-row justify-center items-center "
       >
         <div
