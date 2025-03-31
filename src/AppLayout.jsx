@@ -2,7 +2,7 @@ import Footer from "./ui/Footer";
 import HomeBanner from "./ui/HomeBanner";
 import HomeBanner2 from "./ui/HomeBanner2";
 import JoinRequest from "./ui/JoinRequest";
-import Services from "./ui/Services";
+import Services from "./pages/Services";
 
 function AppLayout() {
   return (

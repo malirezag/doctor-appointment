@@ -5,7 +5,7 @@ function NavBtn({ children, to }) {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        isActive ? "border-b-3 border-b-blue-200 rounded-sm" : ""
+        isActive ? "border-b-3 border-b-blue-500 rounded-sm" : ""
       }
     >
       <button className="cursor-pointer text-nowrap py-1">{children}</button>

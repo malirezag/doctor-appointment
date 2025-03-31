@@ -1,21 +1,26 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import NavBtn from "./NavBtn";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header
       className="flex justify-between px-15 pt-8 items-center
      font-medium text-gray-800 "
     >
       <div className="flex gap-13 items-center text-nowrap">
-        <h3 className="flex gap-1 items-center font-bold text-lg">
+        <button
+          className="flex gap-1 items-center font-bold text-lg cursor-pointer "
+          onClick={() => navigate("/")}
+        >
           <span>
             <img src="/logo.png" alt="logo" />
           </span>
           سامانه نوبت دهی پزشکیار
-        </h3>
+        </button>
         <NavBtn to="/appointment">نوبت دهی مطب</NavBtn>
-        <NavBtn to="/speciality">تخصص ها</NavBtn>
+        <NavBtn to="/specialities  ">تخصص ها</NavBtn>
         <NavBtn to="/doctor">جستوجوی پزشک</NavBtn>
         <NavBtn to="/contact">ارتباط با ما</NavBtn>
       </div>

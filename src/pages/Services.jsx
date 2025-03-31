@@ -1,4 +1,4 @@
-import ServiceItem from "./ServiceItem";
+import ServiceItem from "../ui/ServiceItem";
 
 function Services() {
   return (

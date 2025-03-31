@@ -53,7 +53,7 @@ function HomeBanner() {
 
           <label htmlFor="" className="flex flex-row">
             <input type="radio" />
-            <p>مشاوره آنلاین</p>
+            <p>نوبت حضوری </p>
           </label>
 
           <Button>جستوجوی پزشک</Button>
