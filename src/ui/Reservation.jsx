@@ -14,7 +14,6 @@ function Reservation() {
   const { register, handleSubmit, setValue } = useForm();
   const { setReservations } = useSetReservation();
   const { user } = useGetUser();
-  console.log(user.id);
 
   const [selectedOption, setSelectedOption] = useState(null);
   const { setVisitTime, isPending } = useSetTime();
@@ -34,7 +33,7 @@ function Reservation() {
 
   function onSubmit({ time, mode, date }) {
     setVisitTime({ time, doctorId });
-    setReservations({ doctor: doctorId, mode, date, time, patient: user.id });
+    setReservations({ doctor: doctorId, mode, date, time, patient: user?.id });
   }
 
   return (
