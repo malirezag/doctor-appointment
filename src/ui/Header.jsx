@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import NavBtn from "./NavBtn";
 
@@ -24,7 +24,10 @@ function Header() {
         <NavBtn to="/doctor">جستوجوی پزشک</NavBtn>
         <NavBtn to="/contact">ارتباط با ما</NavBtn>
       </div>
-      <Button>ورود/ثبت نام</Button>
+      <NavLink to="/login">
+        {" "}
+        <Button>ورود/ثبت نام</Button>
+      </NavLink>
     </header>
   );
 }

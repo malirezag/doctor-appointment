@@ -1,17 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import { useForm } from "react-hook-form";
-import useSetTime from "../features/doctors/useSetTime";
+import useSetTime from "../features/doctors/Reservation/useSetTime";
 import useDoctors from "../features/doctors/useDoctors";
 import Spinner from "./Spinner";
 import Option from "./Option";
+import { useSearchParams } from "react-router-dom";
+import useSetReservation from "../features/doctors/Reservation/useSetReservation";
+import useGetUser from "../features/doctors/authentication/useGetUser";
 function Reservation() {
+  const [searchParams] = useSearchParams();
+  const doctorId = Number(searchParams.get("doctor"));
   const { register, handleSubmit, setValue } = useForm();
+  const { setReservations } = useSetReservation();
+  const { user } = useGetUser();
+  console.log(user.id);
+
   const [selectedOption, setSelectedOption] = useState(null);
   const { setVisitTime, isPending } = useSetTime();
   const { doctors } = useDoctors();
-  const doc = doctors ? doctors[0] : [];
-  const { id: doctorId } = doctors ? doctors[0] : "";
+  const doc = doctors?.filter((item) => item.id === doctorId)[0];
 
   const getDate = (daysToAdd) => {
     const date = new Date();
@@ -24,8 +32,9 @@ function Reservation() {
     setValue("mode", option);
   }
 
-  function onSubmit({ time }) {
+  function onSubmit({ time, mode, date }) {
     setVisitTime({ time, doctorId });
+    setReservations({ doctor: doctorId, mode, date, time, patient: user.id });
   }
 
   return (

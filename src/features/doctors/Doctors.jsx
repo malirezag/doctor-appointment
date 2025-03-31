@@ -8,7 +8,7 @@ function Doctors() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="flex justify-around w-280 flex-wrap space-y-7 gap-2 items-center">
+    <div className="flex justify-around w-280 flex-wrap gap-5 items-center">
       {doctors.length !== 0 ? (
         doctors?.map((doctor) => (
           <Doctor

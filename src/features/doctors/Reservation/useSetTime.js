@@ -1,21 +1,20 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { setTime } from "../../services/apiDoctors";
+import { setTime } from "../../../services/apiDoctors";
 import toast from "react-hot-toast";
 
 function useSetTime() {
-  const queryclient = useQueryClient();
+  const queryClient = useQueryClient();
   const {
     mutate: setVisitTime,
     isPending,
     error,
   } = useMutation({
-    mutationFn: (time, doctorId) => {
-      setTime(time, doctorId);
+    mutationFn: ({ time, doctorId }) => {
+      setTime({ time, doctorId });
     },
-    mutationKey: ["doctors"],
     onSuccess: () => {
-      queryclient.invalidateQueries({ active: true });
-      toast.success("addes");
+      queryClient.invalidateQueries({ queryKey: ["doctors"] });
+      toast.success("نوبت شما با موفقیت ثبت شد");
     },
     onError: (err) => toast.error(err.message),
   });

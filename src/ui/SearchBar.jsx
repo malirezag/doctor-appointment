@@ -21,10 +21,10 @@ function SearchBar() {
     <div className="bg-white w-full py-3 rounded-2xl px-4 flex ">
       {urlspeciality && doctorId ? (
         <div className="flex items-center gap-5 w-full text-gray-600">
-          <img src={selectedDoc[0].photo} alt={""} className="h-15 w-15 " />
+          <img src={selectedDoc[0]?.photo} alt={""} className="h-15 w-15 " />
           <p>
             <span className="text-lg font-semibold text-gray-800">
-              {selectedDoc[0].fullname}
+              {selectedDoc[0]?.fullname}
             </span>{" "}
             ( {` متخصص ${speciality === null ? "..." : speciality} `})
           </p>
