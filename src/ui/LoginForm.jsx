@@ -1,16 +1,25 @@
 import { useState } from "react";
 import useLogin from "../features/doctors/authentication/useLogin";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, isPending } = useLogin();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(email);
 
-    login({ password, email });
+    login(
+      { password, email },
+      {
+        onSuccess: () => {
+          navigate("/");
+        },
+      }
+    );
   }
 
   return (
@@ -21,9 +30,9 @@ function LoginForm() {
   flex flex-col p-10 pt-6 gap-5 w-96 h-auto "
       >
         {" "}
-        <h2 className="text-center text-2xl mb-3 text-gray-800  pb-4">ورود</h2>
+        <h2 className="text-center text-3xl mb-3 text-blue-800 pb-4">ورود</h2>
         <div className="flex flex-col gap-2">
-          <label className="w-30 pl-20" htmlFor="email ">
+          <label className="w-30 pl-20 text-blue-800" htmlFor="email ">
             ایمیل:{" "}
           </label>
           <input
@@ -36,7 +45,7 @@ function LoginForm() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label className="" htmlFor="password ">
+          <label className="text-blue-800" htmlFor="password ">
             {" "}
             رمز:{" "}
           </label>
@@ -52,8 +61,8 @@ function LoginForm() {
         <button
           disabled={""}
           type="submit"
-          className="bg-gray-700 text-white p-2 rounded-md
-   cursor-pointer hover:bg-gray-800 text-lg mt-2"
+          className="bg-blue-500 text-white p-2 rounded-md
+   cursor-pointer hover:bg-blue-600 text-lg mt-2"
         >
           {isPending ? "درحال ورود..." : "ورود"}
         </button>
@@ -61,7 +70,7 @@ function LoginForm() {
           className="cursor-pointer text-base text-blue-500"
           onClick={(e) => {
             e.preventDefault();
-            // navigate("/signup");
+            navigate("/signup");
           }}
         >
           اگر حساب کاربری ندارید کلیک کنید

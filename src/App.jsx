@@ -9,6 +9,9 @@ import { store } from "./store";
 import LoginForm from "./ui/LoginForm";
 import { Toaster } from "react-hot-toast";
 import Appointments from "./pages/Appointments";
+import SearchDoctors from "./pages/SearchDoctors";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import SignUpForm from "./ui/SignUpForm";
 
 const queryClient = new QueryClient();
 
@@ -19,10 +22,15 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<AppLayout />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/appointment" element={<Appointments />} />
+              <Route path="/specialities" element={<Specialities />} />
+            </Route>
             <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<SignUpForm />} />
             <Route path="/login" element={<LoginForm />} />
-            <Route path="/appointment" element={<Appointments />} />
-            <Route path="/specialities" element={<Specialities />} />
+
+            <Route path="/doctor" element={<SearchDoctors />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

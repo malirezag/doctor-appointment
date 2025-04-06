@@ -1,11 +1,16 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Button from "./Button";
 import Spinner from "./Spinner";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useDoctors from "../features/doctors/useDoctors";
+import { useState } from "react";
+import specialityItems from "../helpers/specialityItems";
+import { letterCount, searchSpeciality } from "../ReduxSlices/specialitySlice";
 
 function SearchBar() {
   const { doctors, isLoading } = useDoctors();
+  const [inputValue, setInputValue] = useState(null);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const speciality = useSelector((state) => state.speciality.speciality);
@@ -14,6 +19,15 @@ function SearchBar() {
   const selectedDoc = doctors?.filter(
     (doc) => Number(doc.id) === Number(doctorId)
   );
+  const items = specialityItems();
+  function handleSearch(e) {
+    setInputValue(() => e.target.value);
+    const filteredData = items?.filter((item) =>
+      item.title.includes(inputValue)
+    );
+    dispatch(letterCount(e.target.value.length));
+    dispatch(searchSpeciality(filteredData));
+  }
 
   if (isLoading) return <Spinner />;
 
@@ -32,10 +46,11 @@ function SearchBar() {
       ) : (
         <input
           type="text"
-          value={urlspeciality ? speciality : ""}
+          value={urlspeciality ? speciality : inputValue}
           disabled={urlspeciality}
           placeholder="تخصص مورد نظر را جستوجو کنید"
           className="w-full focus:outline-3 focus:outline-blue-200 p-2 ml-5 rounded-xl font-semibold "
+          onChange={handleSearch}
         />
       )}
 

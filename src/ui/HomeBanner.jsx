@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import Header from "./Header";
 
@@ -14,7 +15,8 @@ function HomeBanner() {
           <h1 className="text-5xl leading-18 text-blue-950 font-medium">
             سامانه نوبت دهی پزشکان و مشاوره آنلاین
           </h1>
-          <button
+          <Link
+            to="/specialities"
             className="bg-white px-5 py-3 rounded-sm shadow-lg
            shadow-blue-200 flex flex-row gap-1"
           >
@@ -22,7 +24,7 @@ function HomeBanner() {
               <img src="/pasient.png" alt="" />
             </span>
             لیست تخصص های پزشکی
-          </button>
+          </Link>
         </div>
 
         <img src="/Doc.png" alt="" className="h-75" />

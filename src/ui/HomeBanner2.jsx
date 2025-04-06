@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { SlCalender } from "react-icons/sl";
 
 function HomeBanner2() {
+  const navigate = useNavigate();
   return (
     <div className="h-screen flex flex-row justify-around ">
       <div className="w-[38%] flex justify-center items-start flex-col gap-10 ">
@@ -16,7 +18,10 @@ function HomeBanner2() {
             هزینه خود صرفه جویی کنید.{" "}
           </p>
         </div>
-        <Button className="flex flex-row justify-center items-center gap-2 shadow-lg shadow-blue-200 ">
+        <Button
+          onClick={() => navigate("/specialities")}
+          className="flex flex-row justify-center items-center gap-2 shadow-lg shadow-blue-200 "
+        >
           <span>
             <SlCalender className="text-blue-50 text-xl" />
           </span>

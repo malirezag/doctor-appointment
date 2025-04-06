@@ -8,7 +8,7 @@ function Doctors() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="flex justify-around w-280 flex-wrap gap-5 items-center">
+    <div className="flex justify-around w-280 flex-wrap gap-5 items-center my-10">
       {doctors.length !== 0 ? (
         doctors?.map((doctor) => (
           <Doctor
@@ -19,7 +19,7 @@ function Doctors() {
           />
         ))
       ) : (
-        <p className="text-gray-400"> در این زمینه پزشکی موجود نیست !! </p>
+        <p className="text-gray-400 py-30"> پزشکی یافت نشد 😕</p>
       )}
     </div>
   );

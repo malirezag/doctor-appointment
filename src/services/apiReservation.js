@@ -1,9 +1,10 @@
 import supabase from "../../supabase";
 
-export async function getReservations() {
+export async function getReservations({ userId = "" }) {
   let { data: reservations, error } = await supabase
     .from("reservations")
-    .select("*");
+    .select("*,doctor(fullname,photo)")
+    .eq("patient", userId);
 
   if (error) throw new Error("couldnt fetch reservations");
 

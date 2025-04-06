@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-blue-700 flex flex-row justify-around py-20 border-blue">
+    <footer className="bg-blue-700 flex flex-row justify-around py-20 border-blue bottom-0">
       {/* address and logo */}
       <div className=" text-blue-100 space-y-15">
         {" "}
@@ -21,16 +21,16 @@ function Footer() {
       <div className="text-blue-100 space-y-4">
         <h2 className="text-lg font-bold">خدمات</h2>
         <div className="text-sm flex flex-col gap-4">
-          <Link>جستوجوی پزشک</Link>
-          <Link>نوبت دهی آنلاین</Link>
-          <Link>مشاوره پزشکی</Link>
+          <Link to="/specialities">جستوجوی پزشک</Link>
+          <Link to="/specialities">نوبت دهی آنلاین</Link>
+          <Link to="/specialities">مشاوره پزشکی</Link>
         </div>
       </div>
       {/* about us */}
       <div className="text-blue-100 space-y-4">
         <h2 className="text-lg font-bold">ارتباط با ما</h2>
         <div className="text-sm flex flex-col gap-4">
-          <Link> درباره ما</Link>
+          <Link to="/contact"> درباره ما</Link>
           <Link> تماس با ما</Link>
           <Link> سوالات متداول</Link>
         </div>

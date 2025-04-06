@@ -17,3 +17,26 @@ export async function loginApi({ email, password }) {
 
   return data;
 }
+
+export async function logoutApi() {
+  let { error } = await supabase.auth.signOut();
+  if (error) throw new Error("counldnt login");
+}
+
+export async function signupApi({ email, password, fullname }) {
+  console.log(email);
+
+  let { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: "http://localhost:5173/login",
+      data: {
+        fullname,
+      },
+    },
+  });
+
+  if (error) console.log(error.message);
+  return data;
+}
