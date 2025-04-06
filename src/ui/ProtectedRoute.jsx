@@ -7,10 +7,9 @@ function ProtectedRoute() {
   const { user } = useGetUser();
   useEffect(() => {
     if (user?.role === "authenticated") navigate("/");
-    if (user?.role !== "authenticated") navigate("/login");
   }, [navigate, user?.role]);
 
-  return <Outlet />;
+  return user?.role !== "authenticated" ? navigate("/login") : <Outlet />;
 }
 
 export default ProtectedRoute;
