@@ -6,11 +6,10 @@ function ProtectedRoute() {
   const navigate = useNavigate();
   const { user } = useGetUser();
   useEffect(() => {
-    if (user?.role === "authenticated") navigate("/");
     if (user?.role !== "authenticated") navigate("/login");
   }, [navigate, user?.role]);
 
-  return <Outlet />;
+  if (user?.role === "authenticated") return <Outlet />;
 }
 
 export default ProtectedRoute;
