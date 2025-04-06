@@ -1,12 +1,15 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import useGetUser from "../features/doctors/authentication/useGetUser";
 import { useEffect } from "react";
 
 function ProtectedRoute() {
+  const navigate = useNavigate();
   const { user } = useGetUser();
-  useEffect(() => {}, [user?.role]);
+  useEffect(() => {
+    if (user?.role === "authenticated") navigate("/");
+  }, [navigate, user?.role]);
 
-  return user?.role === "authenticated" ? <Outlet /> : Navigate("/");
+  return <Outlet />;
 }
 
 export default ProtectedRoute;
