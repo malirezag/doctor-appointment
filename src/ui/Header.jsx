@@ -13,8 +13,8 @@ function Header() {
 
   return (
     <header
-      className="flex justify-between px-15 pt-8 items-center
-     font-medium text-gray-800 "
+      className="md:flex justify-between px-15 pt-8 items-center
+     font-medium text-gray-800 hidden "
     >
       <div className="flex gap-13 items-center text-nowrap">
         <button
