@@ -50,7 +50,7 @@ function Reservation() {
       onSubmit={handleSubmit(onSubmit)}
       className="p-10 bg-blue-100 rounded-xl border border-blue-300 flex flex-col gap-7 text-gray-600"
     >
-      <div className="bg-white flex items-center justify-around min-w-250 max-w-300 flex-row py-8 rounded-2xl">
+      <div className="bg-white flex items-center justify-around sm:flex-row py-8 rounded-2xl flex-col md:gap-22 gap-12 px-10 text-nowrap divide-gray-400 ">
         <select {...register("date", { required: true })} className="outline-0">
           <option value="">انتخاب تاریخ </option>
           {/* <option value={getDate(1)}>{getDate(1)}</option> */}

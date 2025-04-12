@@ -1,67 +1,72 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Header from "./Header";
+import UserAccount from "./UserAccount";
 
 function HomeBanner() {
   return (
-    <div className="bg-[url(/banner.png)] bg-cover min-h-screen flex justify-center items-center sm:block">
-      <Header />
-      {/* doctor logo and main text */}
-      <div
-        className="flex justify-around items-center max-w-250
-       mx-auto md:gap-25 px-10 md:pt-15 flex-col-reverse md:flex-row gap-10"
-      >
-        <div className="flex flex-col md:gap-10 items-start gap-3">
-          <h1 className="md:text-5xl leading-18 text-blue-950 font-medium text-nowrap md:text-wrap sm:text-2xl">
-            سامانه نوبت دهی پزشکان و مشاوره آنلاین
-          </h1>
-          <Link
-            to="/specialities"
-            className="bg-white px-5 py-3 rounded-sm shadow-lg
-           shadow-blue-200 flex flex-row gap-1 "
-          >
-            <span>
-              <img src="/pasient.png" alt="" />
-            </span>
-            لیست تخصص های پزشکی
-          </Link>
-        </div>
+    <>
+      <UserAccount className="md:hidden absolute left-0 p-5" />
+      <div className="bg-[url(/banner.png)] bg-cover min-h-screen flex justify-center items-center sm:block flex-col ">
+        <Header />
 
-        <img src="/Doc.png" alt="" className="sm:h-75 h-60 " />
-      </div>
-
-      {/* search pannel */}
-
-      <div
-        className="bg-linear-to-bl from-blue-600 to-indigo-500 h-30 max-w-280 mx-auto mt-15 
-       rounded-2xl md:flex hidden items flex-row justify-center items-center "
-      >
+        {/* doctor logo and main text */}
         <div
-          className=" bg-blue-50 flex items-center justify-center
-         flex-row py-4 px-10 gap-13 rounded-2xl"
+          className="flex justify-around items-center max-w-250
+       mx-auto md:gap-25 px-10 md:pt-15 flex-col-reverse md:flex-row gap-10"
         >
-          <select name="" id="">
-            <option value="">انتخاب پزشک و متخصص</option>
-          </select>
+          <div className="flex flex-col md:gap-10 items-start gap-3">
+            <h1 className="md:text-5xl leading-18 text-blue-950 font-medium text-nowrap md:text-wrap sm:text-2xl text-lg">
+              سامانه نوبت دهی پزشکان و مشاوره آنلاین
+            </h1>
+            <Link
+              to="/specialities"
+              className="bg-white px-5 py-3 rounded-sm shadow-lg
+           shadow-blue-200 flex flex-row gap-1 "
+            >
+              <span>
+                <img src="/pasient.png" alt="" />
+              </span>
+              لیست تخصص های پزشکی
+            </Link>
+          </div>
 
-          <select name="" id="">
-            <option value="">انتخاب تخصص </option>
-          </select>
+          <img src="/Doc.png" alt="" className="sm:h-75 h-60 " />
+        </div>
 
-          <label htmlFor="" className="flex flex-row">
-            <input type="radio" />
-            <p>مشاوره آنلاین</p>
-          </label>
+        {/* search pannel */}
 
-          <label htmlFor="" className="flex flex-row">
-            <input type="radio" />
-            <p>نوبت حضوری </p>
-          </label>
+        <div
+          className="bg-linear-to-bl from-blue-600 to-indigo-500 h-30 max-w-280 mx-auto mt-15 
+       rounded-2xl md:flex hidden items flex-row justify-center items-center "
+        >
+          <div
+            className=" bg-blue-50 flex items-center justify-center
+         flex-row py-4 px-10 gap-13 rounded-2xl"
+          >
+            <select name="" id="">
+              <option value="">انتخاب پزشک و متخصص</option>
+            </select>
 
-          <Button>جستوجوی پزشک</Button>
+            <select name="" id="">
+              <option value="">انتخاب تخصص </option>
+            </select>
+
+            <label htmlFor="" className="flex flex-row">
+              <input type="radio" />
+              <p>مشاوره آنلاین</p>
+            </label>
+
+            <label htmlFor="" className="flex flex-row">
+              <input type="radio" />
+              <p>نوبت حضوری </p>
+            </label>
+
+            <Button>جستوجوی پزشک</Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -22,10 +22,24 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<AppLayout />} />
-            <Route element={<ProtectedRoute />}>
-              <Route path="/appointment" element={<Appointments />} />
-              <Route path="/specialities" element={<Specialities />} />
-            </Route>
+
+            <Route
+              path="/appointment"
+              element={
+                <ProtectedRoute>
+                  <Appointments />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/specialities"
+              element={
+                <ProtectedRoute>
+                  <Specialities />
+                </ProtectedRoute>
+              }
+            />
+
             <Route path="/contact" element={<Contact />} />
             <Route path="/signup" element={<SignUpForm />} />
             <Route path="/login" element={<LoginForm />} />

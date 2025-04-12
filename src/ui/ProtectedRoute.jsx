@@ -1,15 +1,17 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useGetUser from "../features/doctors/authentication/useGetUser";
 import { useEffect } from "react";
 
-function ProtectedRoute() {
+function ProtectedRoute({ children }) {
   const navigate = useNavigate();
-  const { user } = useGetUser();
-  useEffect(() => {
-    if (user?.role !== "authenticated") navigate("/login");
-  }, [navigate, user?.role]);
+  const { user, isLoading } = useGetUser();
+  console.log(user);
 
-  if (user?.role === "authenticated") return <Outlet />;
+  useEffect(() => {
+    if (user?.role !== "authenticated" && !isLoading) navigate("/login");
+  }, [isLoading, navigate, user?.role]);
+
+  if (user?.role === "authenticated") return children;
 }
 
 export default ProtectedRoute;

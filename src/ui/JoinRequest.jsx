@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function JoinRequest() {
   return (
-    <div className="h-screen mt-25 bg-blue-50 ">
+    <div className="h-screen bg-blue-50 bg-[url(/Union.png)] bg-right bg-no-repeat ">
       <div className="w-full absolute flex justify-center items-center h-[80%] ">
         <img
           src="/form.png"
@@ -24,7 +24,7 @@ function JoinRequest() {
         </div>
       </div>
 
-      <img src="/Union.png" alt="" />
+      {/* <img src="/Union.png" alt="" /> */}
     </div>
   );
 }

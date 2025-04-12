@@ -2,17 +2,20 @@ import ServiceItem from "../ui/ServiceItem";
 
 function Services() {
   return (
-    <div className="mb-220 md:mb-0 ">
+    <div className=" bg-[url(/Shape.png)] bg-no-repeat bg-right pb-18 mb-10">
       {" "}
-      <h2 className="text-center md:text-sta text-4xl font-bold text-blue-800 mb-10">
+      <h2 className="text-center text-4xl font-bold text-blue-800 py-10">
         خدمات ما
       </h2>{" "}
-      <div className="min-h-screen flex md:items-center justify-center md:justify-normal   ">
-        <img src="/Shape.png" alt="" className="absolute" />
+      <div className="min-h-screen flex md:items-center justify-center md:justify-normal  ">
+        {/* <img src="/Shape.png" alt="" className="absolute" /> */}
 
         {/* items */}
 
-        <div className="absolute flex md:flex-row md:w-full px-10 flex-col gap-7 md:gap-0 ">
+        <div
+          className=" flex md:flex-row md:w-full lg:px-10 flex-col gap-7 md:gap-5 xl:justify-around md:flex-wrap lg:flex-nowrap justify-center items-center
+            "
+        >
           <ServiceItem
             image={"/item1.png"}
             title={"نوبت‌دهی آنلاین پزشکان"}
