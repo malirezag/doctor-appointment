@@ -7,7 +7,7 @@ function HomeBanner() {
   return (
     <>
       <UserAccount className="md:hidden absolute left-0 p-5" />
-      <div className="bg-[url(/banner.png)] bg-cover min-h-screen flex justify-center items-center sm:block flex-col ">
+      <div className="bg-[url(/banner.png)] bg-cover md:pt-0 pt-24 md:pb-0 pb-13 flex justify-center items-center sm:block flex-col ">
         <Header />
 
         {/* doctor logo and main text */}
@@ -15,7 +15,7 @@ function HomeBanner() {
           className="flex justify-around items-center max-w-250
        mx-auto md:gap-25 px-10 md:pt-15 flex-col-reverse md:flex-row gap-10"
         >
-          <div className="flex flex-col md:gap-10 items-start gap-10">
+          <div className="flex flex-col md:gap-10 items-start gap-10 ">
             <h1 className="md:text-5xl md:leading-18 text-blue-950 font-medium  md:text-wrap sm:text-2xl text-2xl">
               سامانه نوبت دهی پزشکان و مشاوره آنلاین
             </h1>
