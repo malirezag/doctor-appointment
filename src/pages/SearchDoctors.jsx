@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import Doctors from "../features/doctors/Doctors";
 import Footer from "../ui/Footer";
 import Header from "../ui/Header";
@@ -20,7 +21,7 @@ function SearchDoctors() {
           <h2 className="md:text-3xl text-xl mt-15 font-semibold text-blue-800">
             جست و جوی پزشک
           </h2>
-          <div className="bg-white mt-12 md:my-10 py-3 px-2 w-full  rounded-2xl max-w-280 md:mt-10">
+          <div className="bg-white mt-12 md:my-10 py-3 px-2 w-full  rounded-full max-w-280 md:mt-10 flex justify-center items-center">
             <input
               value={value}
               onChange={(e) => {
@@ -29,8 +30,9 @@ function SearchDoctors() {
               }}
               placeholder="نام دکتر مورد نظر را جست و جو کنید"
               type="text"
-              className=" bg-white rounded-xl md:py-3  px-4 text-blue-950 outline-blue-300 py-2 w-full"
+              className=" bg-white rounded-full md:py-3  px-4 mx-2 text-blue-950 outline-blue-300 py-2 w-full "
             />
+            <FaMagnifyingGlass className="text-2xl text-blue-500 mx-4" />
           </div>
           <Doctors />
         </div>

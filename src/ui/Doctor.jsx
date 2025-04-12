@@ -9,7 +9,7 @@ function Doctor({ image, name, id }) {
   return (
     <button
       onClick={handleClick}
-      className="flex flex-row items-center gap-3 bg-white w-80 px-5 py-3 rounded-md cursor-pointer"
+      className="flex flex-row items-center gap-3 bg-white w-80 px-5 py-3 rounded-full cursor-pointer"
     >
       <img src={image} alt={name} className="w-15" />
       <p className="text-sm font font-semibold">{name}</p>
