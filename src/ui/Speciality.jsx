@@ -18,7 +18,7 @@ function Speciality({ title, image, color, type }) {
         color === "blue"
           ? "bg-linear-to-br from-blue-400 to-indigo-700 text-blue-50"
           : "bg-white text-blue-800 "
-      } sm:w-40 w-20 h-20 md:h-38 sm:py-1 sm:space-y-5 space-y-1 rounded-2xl text-xs flex flex-col justify-center items-center font-semibold cursor-pointer px-1`}
+      } sm:w-40 w-20 h-20 sm:h-38 sm:py-1 sm:space-y-5 space-y-1 rounded-2xl text-xs flex flex-col justify-center items-center font-semibold cursor-pointer px-1`}
     >
       <img src={image} alt={title} className="sm:w-17 sm:h-18 w-9 h-8 mt-4" />
       <h3 className="mb-4 sm:text-base text-xs">{title}</h3>

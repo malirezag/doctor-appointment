@@ -35,7 +35,7 @@ function Specialities() {
           </h2>
           {/* search bar an list */}
           <SearchBar />
-          <div className="flex flex-wrap sm:gap-8 max-w-280 md:justify-around justify-between py-5 space-y-5 ">
+          <div className="flex flex-wrap sm:gap-8 max-w-280 md:justify-around justify-between py-5 space-y-5 gap-3">
             {speciality
               ? ""
               : specialities.map((item) => (
