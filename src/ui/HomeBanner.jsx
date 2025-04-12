@@ -15,8 +15,8 @@ function HomeBanner() {
           className="flex justify-around items-center max-w-250
        mx-auto md:gap-25 px-10 md:pt-15 flex-col-reverse md:flex-row gap-10"
         >
-          <div className="flex flex-col md:gap-10 items-start gap-3">
-            <h1 className="md:text-5xl leading-18 text-blue-950 font-medium text-nowrap md:text-wrap sm:text-2xl text-lg">
+          <div className="flex flex-col md:gap-10 items-start gap-10">
+            <h1 className="md:text-5xl md:leading-18 text-blue-950 font-medium  md:text-wrap sm:text-2xl text-2xl">
               سامانه نوبت دهی پزشکان و مشاوره آنلاین
             </h1>
             <Link
@@ -31,7 +31,7 @@ function HomeBanner() {
             </Link>
           </div>
 
-          <img src="/Doc.png" alt="" className="sm:h-75 h-60 " />
+          <img src="/Doc.png" alt="" className="sm:h-75 h-65 " />
         </div>
 
         {/* search pannel */}

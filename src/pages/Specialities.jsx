@@ -25,17 +25,17 @@ function Specialities() {
   return (
     <>
       <MobileMenu />
-      <div className="w-full bg-blue-50 pb-15">
+      <div className="w-full bg-blue-50 pb-10">
         <Header />
         {/* bg images */}
 
-        <div className="  w-full flex flex-col items-center sm:px-30 px-10 gap-10 ">
+        <div className="  w-full flex flex-col items-center sm:px-30 px-10 gap-10 justify-center ">
           <h2 className=" md:text-4xl text-2xl font-bold md:my-15 my-5 text-blue-800">
             تخصص ها
           </h2>
           {/* search bar an list */}
           <SearchBar />
-          <div className="flex flex-wrap sm:gap-8  max-w-280 justify-around py-5 space-y-5 ">
+          <div className="flex flex-wrap sm:gap-8 max-w-280 md:justify-around justify-between py-5 space-y-5 ">
             {speciality
               ? ""
               : specialities.map((item) => (

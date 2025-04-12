@@ -4,7 +4,7 @@ function Services() {
   return (
     <div className=" bg-[url(/Shape.png)] bg-no-repeat bg-right pb-18 mb-10">
       {" "}
-      <h2 className="text-center text-4xl font-bold text-blue-800 py-10">
+      <h2 className="text-center text-3xl md:text-4xl font-bold text-blue-800 md:pb-0 pb-10 ">
         خدمات ما
       </h2>{" "}
       <div className="min-h-screen flex md:items-center justify-center md:justify-normal  ">

@@ -32,7 +32,7 @@ function SearchBar() {
   if (isLoading) return <Spinner />;
 
   return (
-    <div className="bg-white w-full py-3 rounded-2xl px-4 flex flex-col sm:flex-row gap-2 sm:gap0 ">
+    <div className="bg-white w-full py-3 rounded-2xl px-4 flex flex-col sm:flex-row gap-2 sm:gap-0 ">
       {urlspeciality && doctorId ? (
         <div className="flex items-center gap-5 w-full text-gray-600">
           <img src={selectedDoc[0]?.photo} alt={""} className="h-15 w-15 " />
@@ -49,26 +49,32 @@ function SearchBar() {
           value={urlspeciality ? speciality : inputValue}
           disabled={urlspeciality}
           placeholder="تخصص مورد نظر را جستوجو کنید"
-          className="w-full focus:outline-3 focus:outline-blue-200 p-2 ml-5 rounded-xl font-semibold text-sm "
+          className="w-full focus:outline-3 focus:outline-blue-200 p-2 ml-5 rounded-xl font-semibold text-sm md:text-base "
           onChange={handleSearch}
         />
       )}
 
       {/* buttons */}
       <Button
-        className={`${urlspeciality || doctorId ? "hidden" : ""} text-xs`}
+        className={`${
+          urlspeciality || doctorId ? "hidden" : ""
+        } text-xs md:text-base`}
       >
         جستوجوی تخصص
       </Button>
       <Button
         onClick={() => navigate(-1)}
-        className={`${urlspeciality && !doctorId ? "" : "hidden"} text-xs `}
+        className={`${
+          urlspeciality && !doctorId ? "" : "hidden"
+        } text-xs md:text-base `}
       >
         بازگشت به تخصص ها
       </Button>
       <Button
         onClick={() => navigate(-1)}
-        className={`${urlspeciality && doctorId ? "" : "hidden"} text-xs `}
+        className={`${
+          urlspeciality && doctorId ? "" : "hidden"
+        } text-xs md:text-base `}
       >
         بازگشت به انتخاب پزشک
       </Button>

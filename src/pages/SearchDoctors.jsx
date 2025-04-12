@@ -20,7 +20,7 @@ function SearchDoctors() {
           <h2 className="md:text-3xl text-xl mt-15 font-semibold text-blue-800">
             جست و جوی پزشک
           </h2>
-          <div className="bg-white mt-12 md:mt-0 md:my-10 py-3 px-2 w-full  rounded-2xl">
+          <div className="bg-white mt-12 md:my-10 py-3 px-2 w-full  rounded-2xl max-w-280 md:mt-10">
             <input
               value={value}
               onChange={(e) => {

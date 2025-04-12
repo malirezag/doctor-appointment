@@ -20,6 +20,7 @@ function Appointments() {
         <MobileMenu />
         <div className="bg-blue-50">
           <Header />
+
           <div className="flex flex-col justify-center items-center min-h-[55vh] gap-5">
             <p className="text-2xl text-blue-950 font-semibold">
               هنوز نوبتی ثبت نکرده این برای ثبت نوبت روی لینک زیر کلیک کنید
@@ -38,7 +39,9 @@ function Appointments() {
         <MobileMenu />
         <div className="bg-blue-50">
           <Header />
-
+          <h2 className="text-center pt-9 md:text-3xl text-2xl text-blue-700 font-semibold">
+            نوبت های من
+          </h2>
           {isLoading ? (
             <div className="min-h-[55vh] flex justify-center">
               <Spinner />
