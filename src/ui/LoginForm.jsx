@@ -23,7 +23,7 @@ function LoginForm() {
   }
 
   return (
-    <div className="flex items-center h-screen w-90 justify-center mx-auto ">
+    <div className="flex items-center h-screen w-90 justify-center mx-auto flex-col">
       <form
         onSubmit={handleSubmit}
         className="rounded-md 
@@ -76,6 +76,11 @@ function LoginForm() {
           اگر حساب کاربری ندارید کلیک کنید
         </button>
       </form>
+      <div>
+        <p>از ایمیل و رمز زیر استفاده کنید (از فیلترشکن استفاده کنید)</p>
+        <p>malirezag@gmail.com</p>
+        <p>123123123</p>
+      </div>
     </div>
   );
 }

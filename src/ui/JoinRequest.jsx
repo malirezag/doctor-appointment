@@ -19,8 +19,6 @@ function JoinRequest() {
           </div>
         </div>
       </div>
-
-      {/* <img src="/Union.png" alt="" /> */}
     </div>
   );
 }
